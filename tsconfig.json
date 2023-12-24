@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "strict": false,
+    "type-check": "false",
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "types": [
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
+    ],
+    "paths": {
+      "@@/*": [
+        ".dumi/tmp/*"
+      ],
+      "KellyCOM": [
+        "src"
+      ],
+      "KellyCOM/*": [
+        "src/*",
+        "*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+    "**/__test__",
+    "test",
+    "docs",
+    "tests"
+  ],
+  // "include": ["src", "typings"]
+  "include": [
+    ".dumirc.ts",
+    "src/**/*"
+  ]
+}

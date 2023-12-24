@@ -1,0 +1,20 @@
+/*
+ * @Description: 
+ * @author: kelly
+ * @Date: 2023-10-26 13:09:12
+ * @LastEditTime: 2023-10-26 14:43:03
+ */
+/** @type {import('ts-jest').JestConfigWithTsJest} */
+module.exports = {
+  preset: 'ts-jest', // 使用ts-jest预设，支持用ts写单元测试
+  testEnvironment: 'jsdom', // 设置测试环境为jsdom环境
+  roots: ['./src'], // 查找src目录中的文件
+  collectCoverage: true, // 统计覆盖率
+  coverageDirectory: 'coverage', // 覆盖率结果输出的文件夹
+  transform: {
+    ".+\\.(css|style|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+    '\\.(less|css)$': 'jest-less-loader' // 支持less
+  },
+  // 单元覆盖率统计的文件
+  collectCoverageFrom: ['src/**/*.tsx', 'src/**/*.ts', '!src/index.ts', '!src/**/demo/*'],
+};

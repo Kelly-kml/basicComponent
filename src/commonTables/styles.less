@@ -1,0 +1,243 @@
+.transition(@time: 0.3s) {
+  transition: all @time cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.transition-reverse(@time: 0.3s) {
+  transition: all @time cubic-bezier(1, 0.355, 0.045, 0.645);
+}
+
+@text-color: var(--text-color, #424754);
+@text-bg: var(--text-bg, #f0f0f0);
+
+@success-color: var(--success-color, #00a35d);
+@success-bg: var(--success-bg, #cdf4e4);
+
+@primary-color: var(--primary-color, #3d4dd2);
+@primary-bg: var(--primary-bg, #e4ebff);
+
+@error-color: var(--error-color, #c42c2c);
+@error-bg: var(--error-bg, #ffe0db);
+
+@warning-color: var(--warning-color, #cf6d00);
+@warning-bg: var(--warning-bg, #fff1b8);
+
+@failed-color: var(--failed-color, #434343);
+@failed-bg: var(--failed-bg, #d9d9d9);
+
+.basic-table {
+  /** 头部操作栏 */
+  &-head {
+    width: 100%;
+    padding-bottom: 20px;
+
+    &-form {
+      justify-content: flex-end;
+
+      .ant-form-item-control {
+        min-width: 210px;
+      }
+
+      .table-head-toolbar {
+        display: flex;
+        align-items: center;
+
+        .ant-btn-link {
+          padding: 0 5px;
+
+          &.icon {
+            font-size: 18px;
+            .transition();
+
+            &:hover {
+              color: @primary-color;
+            }
+          }
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+
+      .toggle-high-search {
+        .toggle-icon {
+          font-size: 15px;
+          .transition();
+
+          &.expanded {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    .search-icon {
+      cursor: pointer;
+      .transition();
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  /** 高级搜索 */
+  &-high-search {
+    max-height: 0;
+    padding-bottom: 0;
+    overflow-y: hidden;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+
+    &.show {
+      max-height: 10000px;
+      padding-bottom: 20px;
+      opacity: 1;
+      transition: all 0.4s cubic-bezier(1, 0, 0, 1);
+    }
+
+    .handle-box {
+      text-align: center;
+
+      .ant-btn {
+        margin-right: 20px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+  }
+
+  /** 表头 */
+  th.ant-table-cell {
+    .require-mark {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        color: @error-color;
+        font-size: 16px;
+        line-height: 1;
+        transform: translateY(-50%);
+        content: '*';
+      }
+    }
+
+    .tips-icon {
+      margin-left: 10px;
+    }
+  }
+
+  td.ant-table-cell {
+    .ant-form-item {
+      margin: 0;
+    }
+  }
+
+  /** 常用状态颜色 */
+  .ant-table-cell .basic-table-cell-status {
+    display: inline-block;
+    height: 26px;
+    color: @text-color;
+    line-height: 26px;
+
+    &.success {
+      color: @success-color;
+    }
+
+    &.active {
+      color: @primary-color;
+    }
+
+    &.error {
+      color: @error-color;
+    }
+
+    &.failed {
+      color: @failed-color;
+    }
+
+    &.warning {
+      color: @warning-color;
+    }
+
+    &.tag {
+      display: inline;
+      padding: 4px 10px;
+      line-height: 1;
+      background: @text-bg;
+      border: 1px solid @text-bg;
+      border-radius: 13px;
+
+      &.success {
+        background: @success-bg;
+        border: 1px solid @success-bg;
+      }
+
+      &.active {
+        background: @primary-bg;
+        border: 1px solid @primary-bg;
+      }
+
+      &.error {
+        background: @error-bg;
+        border: 1px solid @error-bg;
+      }
+
+      &.failed {
+        background: @failed-bg;
+        border: 1px solid @failed-bg;
+      }
+
+      &.warning {
+        background: @warning-bg;
+        border: 1px solid @warning-bg;
+      }
+    }
+
+    .dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      margin-right: 5px;
+      border-radius: 50%;
+    }
+  }
+
+  /** 操作栏按钮样式 */
+  .ant-table-tbody .ant-table-row .ant-table-cell:last-child,
+  .ant-table-tbody .ant-table-row .ant-table-cell.handle {
+    .ant-btn.ant-btn-link {
+      margin: 0;
+      margin-right: 10px;
+      padding: 0;
+      line-height: 1;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// .column-setting-modal {
+// }
+
+.sortableHelper {
+  z-index: 9999;
+}
