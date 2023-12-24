@@ -1,7 +1,6 @@
 # basicComponent
 
-[![NPM version](https://img.shields.io/npm/v/basicComponent.svg?style=flat)](https://npmjs.org/package/basicComponent)
-[![NPM downloads](http://img.shields.io/npm/dm/basicComponent.svg?style=flat)](https://npmjs.org/package/basicComponent)
+[![gitHub](https://img.shields.io/npm/v/basicComponent.svg?style=flat)](https://github.com/Kelly-kml/basicComponent)
 
 基础的组件库
 
@@ -42,4 +41,4 @@ MIT
 ## 项目中需要用到的一些工具库：
 
 [扩展的工具库](./expand.md)
-"# basicComponent" 
+"# basicComponent"
