@@ -1,16 +1,7 @@
-<!--
- * @Description:
- * @author: kelly
- * @Date: 2023-10-26 11:40:14
- * @LastEditTime: 2023-12-24 12:41:01
--->
-
 ---
-
 group:
-title: 通用组件
+  title: 通用组件
 order: 0
-
 ---
 
 # Button 按钮
